@@ -1,14 +1,14 @@
 ﻿namespace ModeAnalizer
 {
 
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("mood analyser");
-            HappySad happySad = new HappySad("iam in sad a mood");
+            HappySad happySad = new HappySad();
             string Result = happySad.AnalysingMood();
             Console.WriteLine(Result);
         }
     }
-}   
+}
