@@ -1,8 +1,11 @@
-﻿namespace ModeAnalizer
+﻿using MoodAnalyser.MoodAnalyser;
+
+namespace ModeAnalizer
 {
 
     public class Program
     {
+        
         static void Main(string[] args)
         {
             Console.WriteLine("mood analyser");
