@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModeAnalizer
+namespace MoodAnalyser
 {
     public class HappySad
     {
@@ -30,6 +30,10 @@ namespace ModeAnalizer
                 {
                     return "SAD";
                 }
+                else if (this.Message.ToUpper().Equals(string.Empty))
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "message should not be empty");
+                }
                 else
                 {
                     return "HAPPY";
@@ -37,8 +41,10 @@ namespace ModeAnalizer
             }
             catch (NullReferenceException)
             {
-                return "HAPPY";
+                throw new CustomException(CustomException.ExceptionType.NULL_MESSAGE, "message should not be null");
             }
         }
     }
 }
+
+
