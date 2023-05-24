@@ -10,7 +10,7 @@ namespace MoodAnalyser
     public class HappySad
     {
 
-        string Message;
+        public string Message;
         public HappySad()
         {
         }
@@ -47,5 +47,7 @@ namespace MoodAnalyser
         }
     }
 }
+
+
 
 
