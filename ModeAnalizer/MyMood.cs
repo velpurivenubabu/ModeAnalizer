@@ -6,47 +6,43 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyser
 {
-    namespace MoodAnalyser
+    public class HappySad
     {
-        public class HappySad
+
+        string Message;
+        public HappySad()
         {
+        }
+        public HappySad(string message)
+        {
+            this.Message = message;
+        }
 
-            string Message;
-            public HappySad()
+        public string AnalysingMood()
+        {
+            try
             {
-            }
-            public HappySad(string message)
-            {
-                this.Message = message;
-            }
-
-            public string AnalysingMood()
-            {
-                try
+                if (this.Message.ToUpper().Contains("HAPPY"))
                 {
-                    if (this.Message.ToUpper().Contains("HAPPY"))
-                    {
-                        return "HAPPY";
-                    }
-                    else if (this.Message.ToUpper().Contains("SAD"))
-                    {
-                        return "SAD";
-                    }
-                    else if (this.Message.ToUpper().Equals(string.Empty))
-                    {
-                        throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "message should not be empty");
-                    }
-                    else
-                    {
-                        return "HAPPY";
-                    }
+                    return "HAPPY";
                 }
-                catch (NullReferenceException)
+                else if (this.Message.ToUpper().Contains("SAD"))
                 {
-                    throw new CustomException(CustomException.ExceptionType.NULL_MESSAGE, "message should not be null");
+                    return "SAD";
                 }
+                else if (this.Message.ToUpper().Equals(string.Empty))
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "message should not be empty");
+                }
+                else
+                {
+                    return "HAPPY";
+                }
+            }
+            catch (NullReferenceException)
+            {
+                throw new CustomException(CustomException.ExceptionType.NULL_MESSAGE, "message should not be null");
             }
         }
     }
-
-
+}
